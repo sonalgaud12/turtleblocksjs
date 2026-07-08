@@ -18,13 +18,16 @@
 //   1. ?turtle or ?music query param  (handy for local testing)
 //   2. hostname contains "turtle" or "music"
 //   3. DEFAULT_IS_MUSIC_BLOCKS (build-time default)
+//
+// The fallback is intentionally Music Blocks so local development and
+// unrecognized hosts start in the Music Blocks experience by default.
 
 /* exported
    THIS_IS_MUSIC_BLOCKS, THIS_IS_TURTLE_BLOCKS,
    getSplashScreenSrc, RELEASE_TAB_TITLE, LOADING_TEXTS
 */
 
-const DEFAULT_IS_MUSIC_BLOCKS = false;
+const DEFAULT_IS_MUSIC_BLOCKS = true;
 
 function resolveIsMusicBlocks() {
     const params = new URLSearchParams(window.location.search);
